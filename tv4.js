@@ -674,6 +674,7 @@ ValidatorContext.prototype.validateDefinedKeywords = function (data, schema, dat
 				} else if (typeof code !== 'number') {
 					code = ErrorCodes.KEYWORD_CUSTOM;
 				}
+                
 				var messageParams = (typeof result.message === 'object') ? result.message : {key: key, message: result.message || "?"};
 				var schemaPath = result.schemaPath ||( "/" + key.replace(/~/g, '~0').replace(/\//g, '~1'));
 				return this.createError(code, messageParams, result.dataPath || null, schemaPath);
