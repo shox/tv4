@@ -1601,8 +1601,8 @@ function createApi(language) {
 				}
 			}
 		},
-        overrideDefaultMsgs: function(code, msg){
-            ErrorMessagesDefault[code] = msg;
+        overrideDefaultMsgs: function(codeName, msg){
+            ErrorMessagesDefault[ ErrorCodes[codeName] ] = msg;
         },
 		reset: function () {
 			globalContext.reset();
