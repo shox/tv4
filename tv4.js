@@ -1601,6 +1601,9 @@ function createApi(language) {
 				}
 			}
 		},
+        overRideDefault: function(code, msg){
+            ErrorMessagesDefault[code] = msg;
+        },
 		reset: function () {
 			globalContext.reset();
 			this.error = null;
