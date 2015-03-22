@@ -1601,7 +1601,7 @@ function createApi(language) {
 				}
 			}
 		},
-        overRideDefault: function(code, msg){
+        overrideDefaultMsgs: function(code, msg){
             ErrorMessagesDefault[code] = msg;
         },
 		reset: function () {
