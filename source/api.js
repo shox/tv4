@@ -263,7 +263,7 @@ function createApi(language) {
 				}
 			}
 		},
-        overRideDefaultMsgs: function(code, msg){
+        overrideDefaultMsgs: function(code, msg){
             ErrorMessagesDefault[code] = msg;
         },
 		reset: function () {
