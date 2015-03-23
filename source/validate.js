@@ -326,7 +326,7 @@ ValidatorContext.prototype.validateFormat = function (data, schema) {
 	var errorMessage = this.formatValidators[schema.format].call(null, data, schema);
 	if (typeof errorMessage === 'string' || typeof errorMessage === 'number') {
 		return this.createError(ErrorCodes.FORMAT_CUSTOM, {message: errorMessage}).prefixWith(null, "format");
-	} else if (errorMessage && typeof errorMessage === 'object' && errorMessage.errorCode && ErrorCodes[errorMessage.errorCode]) {
+	} else if (errorMessage && typeof errorMessage === 'object' && errorMessage.errorCode) {
 		return this.createError(errorMessage.errorCode, {message: ErrorMessagesDefault[errorMessage.errorCode]}, errorMessage.dataPath || null, errorMessage.schemaPath || "/format");
 	} else if (errorMessage && typeof errorMessage === 'object') {
 		return this.createError(ErrorCodes.FORMAT_CUSTOM, {message: errorMessage.message || "?"}, errorMessage.dataPath || null, errorMessage.schemaPath || "/format");
